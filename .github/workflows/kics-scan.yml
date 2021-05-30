@@ -1,8 +1,13 @@
 name: scan with KICS and upload SARIF
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
-    branches: [master]
+    # The branches below must be a subset of the branches above
+    branches: [ main ]
+  schedule:
+    - cron: '20 14 * * 1'
 
 jobs:
   kics-job:
