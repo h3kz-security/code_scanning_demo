@@ -13,6 +13,7 @@ jobs:
   kics-job:
     runs-on: ubuntu-latest
     name: kics-action
+    continue-on-error: true
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
