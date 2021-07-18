@@ -110,7 +110,6 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           npm install @security-alert/sarif-to-issue
-          npx @security-alert/sarif-to-issue results-dir/results.sarif
           GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} npx @security-alert/sarif-to-issue results.sarif --title "Security Issue" --owner h3kz-security --repo code_scanning_demo --sarifContentOwner h3kz-security --sarifContentRepo code_scanning_demo --sarifContentBranch main results.sarif --labels "security" 
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v1
